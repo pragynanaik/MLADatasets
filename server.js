@@ -33,7 +33,11 @@ MongoUtil.connectToServer(function (err, client) {
   });
 
   app.post("/", function (request, response) {
-    filteringInput = request.body;
+    delete filteringInput["Gender"];
+    delete filteringInput["Round Number"];
+    delete filteringInput["MatchType"];
+    delete filteringInput["Date"];
+    delete filteringInput["$or"];
   });
 
   app.post("/clickedGender", function (request, response) {
@@ -160,6 +164,8 @@ MongoUtil.connectToServer(function (err, client) {
   });
 
   app.post("/clickedSubmit", function (request, response) {
+    console.log(filteringInput);
+
     dbo
       .collection("allYear")
       .find(filteringInput)
