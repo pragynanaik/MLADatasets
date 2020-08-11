@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 
 // __dirname = "/Users/pragynanaik/Desktop/MLWebsite/MLAthleteWebsite";
-__dirname = "/home/pragyna/app/MLADatasets";
+__dirname = "/home/pragyna/app/MLADatasets/public";
 const filteringInput = {};
 
 let converter = require("json-2-csv");
