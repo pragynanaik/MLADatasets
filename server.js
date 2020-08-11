@@ -3,7 +3,8 @@ var MongoUtil = require("mongoUtil");
 const express = require("express");
 const app = express();
 
-__dirname = "/Users/pragynanaik/Desktop/MLWebsite/MLAthleteWebsite";
+// __dirname = "/Users/pragynanaik/Desktop/MLWebsite/MLAthleteWebsite";
+__dirname = "/home/pragyna/app/MLADatasets";
 const filteringInput = {};
 
 let converter = require("json-2-csv");
