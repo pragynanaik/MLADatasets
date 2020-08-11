@@ -1,0 +1,121 @@
+#header {
+  height: 230px;
+  margin-top: 0rem;
+}
+
+#headerText {
+  padding-bottom: 60px;
+}
+
+.dropdown {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#dropCheck {
+  height: 200px;
+  overflow-y: auto;
+}
+
+#startButton {
+  text-align: center;
+  padding: 10px;
+  border: none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  border-radius: 50px;
+  margin-top: 10rem;
+  margin-left: 27rem;
+  margin-right: 10rem;
+  width: 40%;
+}
+
+#buttonStart {
+  padding: 3rem;
+  font-size: 3rem;
+  background-color: #adcae6;
+  border: none;
+}
+
+main {
+  display: flexbox;
+}
+
+#front {
+  justify-content: center;
+}
+
+.selectElements {
+  display: block;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-top: 1rem;
+  text-align: center;
+
+  background-color: #e8f4f8;
+}
+
+#matchT {
+  display: inline;
+}
+
+#matchNumber {
+  display: inline;
+  padding-left: 10px;
+}
+
+#matchTotal {
+  display: flex;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+  flex: 0 0 10px;
+  border-radius: 10px;
+  background-color: #f0f8ff;
+  width: fit-content;
+  padding-top: 10px;
+  margin-left: 10px;
+}
+
+.first {
+  padding-left: 10px;
+}
+
+.second {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.downloadButton {
+  display: inline-block;
+  justify-content: space-between;
+  margin-left: 50px;
+}
+
+#download {
+  background-color: #f0f8ff;
+  color: black;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+
+  margin-left: 600px;
+}
+
+#submitData {
+  background-color: #f0f8ff;
+  color: black;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  display: inline;
+  margin-right: 400px;
+}
+
+/* #roundNumber {
+  margin-right: 29%;
+} */
+
+.purpleDrop {
+  background-color: lightsteelblue;
+  width: fit-content;
+}

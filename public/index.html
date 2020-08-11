@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Pragyna Naik" />
+    <meta name="description" content="Website for downloading MLAthlete data" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="icon" type="image/png" href="tennis.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="bootstrap.bundle.min.js/bootstrap.bundle.js" />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <script src="https://bossanova.uk/jsuites/v3/jsuites.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <link href="multiselect.css" rel="stylesheet" />
+
+    <title>MLAthlete-TennisData</title>
+  </head>
+
+  <body>
+    <header id="header" class="jumbotron jumbotron-fluid text-white bg-info">
+      <div class="container" id="headerText">
+        <h1 class="display-4 text-center">MLAthlete Data</h1>
+        <p class="lead text-center">
+          To filter the MLAthlete data based on your preferences first click the
+          start button. Then for each category select through the dropdown in
+          which information you would like to use when filtering the data. If
+          you don’t want to filter the data by a certain category, leave it way
+          it is. Lastly, download your CSV!
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <div class="d-none" id="matchTotal">
+        <div class="first">
+          <p id="matchT">Total Number of Matches:</p>
+        </div>
+        <div class="second">
+          <p id="matchesNumber">All Matches</p>
+        </div>
+      </div>
+
+      <div class="Home" id="front">
+        <div id="startButton">
+          <button
+            class="btn btn-primary"
+            id="buttonStart"
+            type="submit"
+            href="/"
+          >
+            Start Filtering!
+          </button>
+        </div>
+      </div>
+
+      <div class="EnterData d-none" id="EnterData">
+        <div class="selectElements">
+          <label for="dates" aria-label="Date Input"
+            >Date Ranges (yyyy-mm-dd, yyyy-mm-dd):
+          </label>
+          <input type="text" name="datefilter" id="dateInput" value="" />
+        </div>
+
+        <div class="selectElements">
+          <label for="gender" aria-label="Gender Input"
+            >Gender(Female, Male, Both):
+          </label>
+          <select name="genderDrop" id="genderDrop">
+            <option value="Both">Both</option>
+            <option value="Women">Women</option>
+            <option value="Men">Men</option>
+          </select>
+        </div>
+
+        <div class="selectElements" id="roundNumber">
+          <label for="roundNumber" aria-label="Round Input"
+            >Round Number(Semifinal, Final, etc):
+          </label>
+          <select name="roundDrop" id="roundDrop">
+            <option value="Any Round">Any Round</option>
+            <option value="First Round">First Round</option>
+            <option value="Second Round">Second Round</option>
+            <option value="Third Round">Third Round</option>
+            <option value="Quarterfinals">Quarterfinals</option>
+            <option value="Semifinals">Semifinals</option>
+            <option value="Finals">Finals</option>
+          </select>
+        </div>
+
+        <div class="selectElements">
+          <label for="typeMatch" aria-label="Match Input"
+            >Type of Match:
+          </label>
+          <select name="matchDrop" id="matchDrop">
+            <option value="Any Match">Any type of Match</option>
+            <option value="Singles">Singles</option>
+            <option value="Doubles">Doubles</option>
+          </select>
+        </div>
+
+        <div class="selectElements">
+          <div class="dropdown-check-list" id="playerNames">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Select Players from Database:
+            </button>
+            <div
+              class="dropdown-menu scrollable-menu"
+              aria-labelledby="dropdownMenuButton"
+              id="dropCheck"
+            ></div>
+
+            <script src="http://d3js.org/d3.v3.js"></script>
+
+            <script>
+              d3.csv("names.csv", function (error, data) {
+                var playerDrop = document.getElementById("dropCheck");
+
+                for (var i = 0; i < data.length; i++) {
+                  var namesP = Object.values(data[i])[0];
+
+                  var label = document.createElement("label");
+                  label.setAttribute("for", namesP);
+                  label.textContent = namesP + "   ";
+                  label.classList.add("dropdown-item");
+
+                  var input = document.createElement("input");
+                  input.setAttribute("type", "checkbox");
+                  input.setAttribute("value", namesP);
+
+                  input.addEventListener("click", function () {
+                    this.setAttribute("checked", this.checked);
+                  });
+
+                  label.appendChild(input);
+
+                  playerDrop.appendChild(label);
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <button class="btn btn-primary d-none" type="submit">
+        Back to Home
+      </button>
+
+      <div class="downloadButton">
+        <button class="btn btn-primary d-none" type="submit" id="submitData">
+          Submit Data
+        </button>
+      </div>
+
+      <div class="downloadButton">
+        <button class="btn btn-primary d-none" type="submit">
+          Enter Data
+        </button>
+      </div>
+
+      <div class="downloadButton">
+        <button class="btn btn-primary d-none" type="submit" id="download">
+          Download
+        </button>
+      </div>
+    </footer>
+  </body>
+  <script src="index.js"></script>
+</html>
