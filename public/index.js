@@ -141,7 +141,6 @@ genderInput.addEventListener("change", function () {
     .then((filterInputs) => {
       // get the response from the server POST request
 
-      console.log(filterInputs);
       var matches = document.getElementById("matchesNumber");
       matches.textContent = filterInputs["Gender"] + " matches";
     });

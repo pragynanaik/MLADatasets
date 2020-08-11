@@ -35,10 +35,10 @@ MongoUtil.connectToServer(function (err, client) {
 
   app.post("/", function (request, response) {
     delete filteringInput["Gender"];
-    delete filteringInput["Round Number"];
-    delete filteringInput["MatchType"];
-    delete filteringInput["Date"];
-    delete filteringInput["$or"];
+    // delete filteringInput["Round Number"];
+    // delete filteringInput["MatchType"];
+    // delete filteringInput["Date"];
+    // delete filteringInput["$or"];
   });
 
   app.post("/clickedGender", function (request, response) {
@@ -53,7 +53,7 @@ MongoUtil.connectToServer(function (err, client) {
       .find(filteringInput)
       .toArray(function (err, result) {
         if (err) return console.log(err);
-        response.send({ Gender: filteringInput });
+        response.send({ Gender: result.length });
       });
   });
 
