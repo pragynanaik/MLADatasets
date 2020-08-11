@@ -121,6 +121,7 @@ fetch("/", {
 })
   .then((response) => response.json())
   .then((filterInputs) => {
+    console.log("refreshed");
     // get the response from the server POST request
     // var matches = document.getElementById("matchesNumber");
     // matches.textContent = filterInputs["Gender"] + " matches";
