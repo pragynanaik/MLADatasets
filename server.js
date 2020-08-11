@@ -47,12 +47,13 @@ MongoUtil.connectToServer(function (err, client) {
     } else {
       filteringInput["Gender"] = request.body.Gender;
     }
+
     dbo
       .collection("allYear")
       .find(filteringInput)
       .toArray(function (err, result) {
         if (err) return console.log(err);
-        response.send({ Gender: result.length });
+        response.send({ Gender: filteringInput });
       });
   });
 
