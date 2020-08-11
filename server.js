@@ -32,6 +32,10 @@ MongoUtil.connectToServer(function (err, client) {
     filteringInput = {};
   });
 
+  app.post("/", function (request, response) {
+    filteringInput = request.body;
+  });
+
   app.post("/clickedGender", function (request, response) {
     if (request.body.Gender == "Both") {
       delete filteringInput["Gender"];

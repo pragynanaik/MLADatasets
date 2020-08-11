@@ -114,6 +114,18 @@ startFiltering.addEventListener("click", function () {
 const filterInputs = {};
 const dateRanges = {};
 
+fetch("/", {
+  method: "POST",
+  body: JSON.stringify(filterInputs),
+  headers: { "Content-Type": "application/json" },
+})
+  .then((response) => response.json())
+  .then((filterInputs) => {
+    // get the response from the server POST request
+    // var matches = document.getElementById("matchesNumber");
+    // matches.textContent = filterInputs["Gender"] + " matches";
+  });
+
 genderInput.addEventListener("change", function () {
   filterInputs.Gender = genderInput.value;
 
